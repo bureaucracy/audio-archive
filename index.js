@@ -217,8 +217,8 @@ let routes = [
         payload: {
           title: Joi.string().required(),
           artist: Joi.string().required(),
-          tracklisting: Joi.string(),
-          notes: Joi.string()
+          tracklisting: Joi.string().allow('').optional(),
+          notes: Joi.string().allow('').optional()
         }
       }
     }
