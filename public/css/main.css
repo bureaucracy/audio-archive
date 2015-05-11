@@ -55,12 +55,13 @@ html, body {
 }
 
 body {
-  background-color: #f1f1f1;
+  background-color: #fbfbfb;
   color: #111;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 a {
+  color: #2db3d5;
   text-decoration: none;
 }
 
@@ -76,13 +77,17 @@ header li {
 }
 
 #logo a {
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   color: #fff;
   margin-left: 10px;
 }
 
+#logo a:hover {
+  color: #111;
+}
+
 #add {
-  font-size: 7rem;
+  font-size: 6rem;
   font-family: Arial;
   float: right;
   text-align: center;
@@ -93,6 +98,10 @@ header li {
   color: #111;
 }
 
+#add a:hover {
+  color: #fff;
+}
+
 #wrapper {
   position: relative;
   max-width: 1000px;
@@ -100,6 +109,10 @@ header li {
   width: 100%;
   margin: 0 auto;
   padding-bottom: 100px;
+}
+
+.inner {
+  padding: 0 10px;
 }
 
 .detail {
@@ -122,7 +135,7 @@ footer a {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   text-transform: uppercase;
   margin-bottom: 30px;
   font-weight: 100;
@@ -150,17 +163,21 @@ h3.head {
   color: #666;
 }
 
-h3.tracklist {
+h3.tracklist, h3.note {
   margin-top: 25px;
   padding: 0 10px;
+}
+
+h3.note {
+  margin-top: 45px;
 }
 
 h3 span {
   color: #3fe4a4;
 }
 
-h3 span, h3.tracklist {
-  font-size: 2.2rem;
+h3 span, h3.tracklist, h3.note {
+  font-size: 2.1rem;
   padding-right: 15px;
 }
 
@@ -181,6 +198,12 @@ h3 span, h3.tracklist {
 .forgot {
   font-size: 0.9rem;
   color: #111;
+}
+
+.email span {
+  display: inline-block;
+  margin-left: 20px;
+  margin-bottom: 30px;
 }
 
 form {
@@ -233,6 +256,11 @@ textarea {
   margin-bottom: 10px;
 }
 
+.mixes li:hover h3 {
+  background-color: #111;
+  color: #eee;
+}
+
 .tracklisting {
   border-left: 5px solid #fff;
   padding-left: 20px;
@@ -247,7 +275,7 @@ textarea {
 }
 
 .notes {
-  background-color: #fff36d;
+  background-color: #fffa7b;
   margin: 10px;
   padding: 20px;
 }
@@ -297,8 +325,8 @@ button, .edit a {
 }
 
 .edit a, .update button {
-  background-color: #fff;
-  color: #111;
+  background-color: #111;
+  color: #eee;
 }
 
 .edit a {

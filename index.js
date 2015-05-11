@@ -32,14 +32,15 @@ server.views({
 
 server.ext('onPreResponse', function (request, reply) {
   let response = request.response;
-  if (!response.isBoom) {
-    if (['/dashboard', '/post'].indexOf(request.path) > -1) {
-      if (!request.auth.isAuthenticated) {
-        return reply.redirect('/');
-      }
-    }
 
+  if (!response.isBoom) {
     return reply.continue();
+  }
+
+  if (['/dashboard', '/post', '/post/edit', '/post/delete'].indexOf(request.path) > -1) {
+    if (!request.auth.isAuthenticated) {
+      return reply.redirect('/');
+    }
   }
 
   let error = response;
@@ -254,6 +255,30 @@ let routes = [
       auth: auth
     },
     handler: services.deletePost
+  },
+  {
+    method: 'GET',
+    path: '/profile',
+    config: {
+      auth: auth
+    },
+    handler: services.profile
+  },
+  {
+    method: 'POST',
+    path: '/profile',
+    config: {
+      auth: auth
+    },
+    handler: authenticate.update
+  },
+  {
+    method: 'GET',
+    path: '/user/{uid}',
+    config: {
+      auth: auth
+    },
+    handler: services.user
   },
   {
     method: 'GET',
