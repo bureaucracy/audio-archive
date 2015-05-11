@@ -1,0 +1,31 @@
+mixin postView(post, opts)
+  li
+    if !opts.showDetails
+      a(href='/post/#{post.pid}')
+        h3.head
+          span Title
+          = post.title
+        h3.head
+          span Artist
+          = post.artist
+    else
+      h3.head
+        span Title
+        = post.title
+      h3.head
+        span Artist
+        = post.artist
+    if opts.showDetails
+      if post.tracklisting && post.tracklisting.length > 0
+        h3.tracklist Tracklisting
+        ol.tracklisting
+          for track in post.tracklisting
+            li
+              if track.id
+                span.id= track.id + '. '
+              if track.startTime
+                span.time= '[' + track.startTime + '] '
+              if track.title
+                span.title= track.title
+      if post.notes
+        .notes!= post.notesMarked

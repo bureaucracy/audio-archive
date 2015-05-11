@@ -12,9 +12,12 @@ block content
       h2 Tracklisting
       textarea(rows=5, cols=50, name='tracklisting')
         for track in post.tracklisting
-          = track.id
-          = track.startTime
-          = track.title + '\n'
+          if track.id
+            = track.id + '. '
+          if track.startTime
+            = '[' + track.startTime + '] '
+          if track.title
+            = track.title + '\n'
       h2 Notes (supports markdown)
       textarea(rows=5, cols=50, name='notes')= post.notes
       input(type='hidden', name='created', value='#{post.created}')

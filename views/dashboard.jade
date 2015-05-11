@@ -1,3 +1,4 @@
+include mixins
 extend layout
 
 block content
@@ -8,10 +9,3 @@ block content
         +postView(post, {
           showDetails: false
         })
-        #actions
-          .edit
-            a(href='/post/edit/#{post.pid}') edit
-          .delete
-            form(method='post', action='/post/delete/#{post.created}!#{post.pid}')
-              input(type='hidden', name='crumb', value='#{crumb}')
-              button(type='submit') delete
