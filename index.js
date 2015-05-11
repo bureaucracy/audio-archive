@@ -216,7 +216,9 @@ let routes = [
       validate: {
         payload: {
           title: Joi.string().required(),
-          artist: Joi.string().required()
+          artist: Joi.string().required(),
+          tracklisting: Joi.string(),
+          notes: Joi.string()
         }
       }
     }
