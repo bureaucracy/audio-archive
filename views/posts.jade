@@ -1,0 +1,13 @@
+extend layout
+
+block content
+  #posts
+    for post in posts
+      article
+        time= post.created
+        p.author posted by #{post.name}
+        if post.content.text
+          if post.content.text.match(/((http|https):\/\/)/i)
+          p= post.content.text
+        if post.content.notes
+          pre= post.content.notes

@@ -1,0 +1,17 @@
+extend layout
+
+block content
+  section
+    h1 post new audio
+
+    form(method='post', action='/post')
+      h2 Title
+      input(type='text', name='title', required)
+      h2 Artist
+      input(type='text', name='artist', required)
+      h2 Tracklisting
+      textarea(name='tracklisting')
+      h2 Notes (supports markdown)
+      textarea(name='notes')
+      input(type='hidden', name='crumb', value='#{crumb}')
+      button(type='submit') add

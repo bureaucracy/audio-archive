@@ -1,0 +1,16 @@
+extend layout
+
+block content
+  section.detail
+    ol
+      +postView(post, {
+        showDetails: true
+      })
+      if isOwner
+        #actions
+          .edit
+            a(href='/post/edit/#{post.pid}') edit
+          .delete
+            form(method='post', action='/post/delete/#{post.created}!#{post.pid}')
+              input(type='hidden', name='crumb', value='#{crumb}')
+              button(type='submit') delete

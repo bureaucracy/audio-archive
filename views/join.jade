@@ -1,0 +1,16 @@
+extend layout
+
+block login
+
+block content
+  section
+    h1 sign up
+    form(method='post', action='/signup')
+      input(type='email', name='email', placeholder='your@email.com', value='#{ email ? email : "" }')
+      input(type='password', name='password', placeholder='password')
+      input(type='hidden', name='crumb', value='#{crumb}')
+      button(type='submit') sign up
+    if error
+      p.errors= error
+
+block footer

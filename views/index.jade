@@ -1,0 +1,10 @@
+extend layout
+
+block content
+  section
+    h1 Recent
+    ol
+      for post in posts
+        +postView(post, {
+          showDetails: false
+        })

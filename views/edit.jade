@@ -1,0 +1,23 @@
+extend layout
+
+block content
+  section
+    h1 edit audio
+
+    form(method='post', action='/post/edit/#{post.created}', class='update')
+      h2 Title
+      input(type='text', name='title', value='#{post.title}')
+      h2 Artist
+      input(type='text', name='artist', value='#{post.artist}')
+      h2 Tracklisting
+      textarea(rows=5, cols=50, name='tracklisting')
+        for track in post.tracklisting
+          = track.id
+          = track.startTime
+          = track.title + '\n'
+      h2 Notes (supports markdown)
+      textarea(rows=5, cols=50, name='notes')= post.notes
+      input(type='hidden', name='created', value='#{post.created}')
+      input(type='hidden', name='pid', value='#{post.pid}')
+      input(type='hidden', name='crumb', value='#{crumb}')
+      button(type='submit') update
