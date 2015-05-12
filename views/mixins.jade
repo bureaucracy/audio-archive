@@ -13,19 +13,9 @@ mixin postView(post, opts)
   li
     if !opts.showDetails
       a(href='/post/#{post.pid}')
-        h3.head
-          span Title
-          = post.title
-        h3.head
-          span Artist
-          = post.artist
+        h3.head= post.artist + ' - ' + post.title
     else
-      h3.head
-        span Title
-        = post.title
-      h3.head
-        span Artist
-        = post.artist
+      h3.head= post.artist + ' - ' + post.title
     if opts.showDetails
       if post.tracklisting && post.tracklisting.length > 0
         h3.tracklist Tracklisting

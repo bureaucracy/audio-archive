@@ -28,7 +28,7 @@
     "postmark": "~1.0.0",
     "level": "~0.19.1",
     "concat-stream": "~1.4.7",
-    "trakker": "~0.0.5",
+    "trakker": "~0.0.6",
     "marked": "~0.3.3"
   },
   "devDependencies": {
