@@ -6,6 +6,10 @@ block content
     h2
       | posted by:&#xa0;
       a(href='/user/#{post.posted}')= post.postedBy
+    if !isOwner
+      form(method='post', action='/post/add/#{post.pid}', class='add-collection')
+        input(type='hidden', name='crumb', value='#{crumb}')
+        button(type='submit') + add to collection
     ol
       +postView(post, {
         showDetails: true

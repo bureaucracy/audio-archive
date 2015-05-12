@@ -200,6 +200,10 @@ h3 span, h3.tracklist, h3.note {
   color: #111;
 }
 
+.add-collection button {
+  width: 200px;
+}
+
 .email span {
   display: inline-block;
   margin-left: 20px;
@@ -256,7 +260,11 @@ textarea {
   margin-bottom: 10px;
 }
 
-.mixes li:hover h3 {
+.mixes li.added a h3 {
+  background-color: #eee;
+}
+
+.mixes li:hover h3, .mixes li.added:hover a h3 {
   background-color: #111;
   color: #eee;
 }

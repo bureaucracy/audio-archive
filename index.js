@@ -250,6 +250,14 @@ let routes = [
   },
   {
     method: 'POST',
+    path: '/post/add/{pid}',
+    config: {
+      auth: auth
+    },
+    handler: posts.collection
+  },
+  {
+    method: 'POST',
     path: '/post/delete/{pid}',
     config: {
       auth: auth

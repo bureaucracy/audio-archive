@@ -10,7 +10,7 @@ mixin head(analytics)
 
 
 mixin postView(post, opts)
-  li
+  li(class='#{post.added ? "added":""}')
     if !opts.showDetails
       a(href='/post/#{post.pid}')
         h3.head= post.artist + ' - ' + post.title
