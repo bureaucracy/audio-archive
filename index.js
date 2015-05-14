@@ -170,6 +170,22 @@ let routes = [
   },
   {
     method: 'GET',
+    path: '/search',
+    handler: services.search,
+    config: {
+      auth: auth
+    }
+  },
+  {
+    method: 'POST',
+    path: '/search',
+    handler: services.search,
+    config: {
+      auth: auth
+    }
+  },
+  {
+    method: 'GET',
     path: '/dashboard',
     handler: services.dashboard,
     config: {

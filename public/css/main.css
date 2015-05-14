@@ -181,6 +181,26 @@ h3 span, h3.tracklist, h3.note {
   padding-right: 15px;
 }
 
+#search {
+  position: absolute;
+  top: 70px;
+  z-index: 2;
+  right: 6px;
+}
+
+#search input {
+  border: 0;
+  background-color: #111;
+  color: #eee;
+  font-size: 1.45rem;
+  padding: 5px;
+  width: 180px;
+}
+
+#search button {
+  display: none;
+}
+
 /* Forms */
 
 .login {
