@@ -15,11 +15,7 @@ html
         li#logo
           a(href='/') Aa
         block search
-          li#search
-            form(method='post', action='/search')
-              input(type='text', name='keyword')
-              input(type='hidden', name='crumb', value='#{crumb}')
-              button(type='submit') find
+
         if session
           li#add
             a(href='/post') +
